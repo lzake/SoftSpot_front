@@ -1,7 +1,8 @@
 $(document).ready(function() {
-    $.get("https://softspotdatabase.herokuapp.com/users", function(data1) {
-        for (var j = 0; j < data1.length; j++) {
-            $('.userselect').append($('<option>' + data1[j].name + '</option>'));
+    $.get("https://softspotdatabase.herokuapp.com/users", function(usersstuff) {
+      // console.log(usersstuff)
+        for (var j = 0; j < usersstuff.length; j++) {
+            $('.userselect').append($('<option>' + usersstuff[j].name + '</option>'));
         }
     });
     $(".userselect").change(function(x) {

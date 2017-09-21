@@ -1,0 +1,84 @@
+[debug] [2017-09-21T17:41:55.254Z] ----------------------------------------------------------------------
+[debug] [2017-09-21T17:41:55.256Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-09-21T17:41:55.257Z] CLI Version:   3.12.0
+[debug] [2017-09-21T17:41:55.257Z] Platform:      darwin
+[debug] [2017-09-21T17:41:55.257Z] Node Version:  v8.4.0
+[debug] [2017-09-21T17:41:55.257Z] Time:          Thu Sep 21 2017 11:41:55 GMT-0600 (MDT)
+[debug] [2017-09-21T17:41:55.257Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-21T17:41:55.268Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-21T17:41:55.269Z] > authorizing via signed-in user
+[debug] [2017-09-21T17:41:55.270Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/softspotfront  
+ Thu Sep 21 2017 11:41:55 GMT-0600 (MDT)
+[debug] [2017-09-21T17:41:55.593Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-21T17:41:55.594Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/softspotfront/tokens  
+ Thu Sep 21 2017 11:41:55 GMT-0600 (MDT)
+[debug] [2017-09-21T17:41:55.982Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'softspotfront'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing SoftSpot_front directory for upload...
+[debug] [2017-09-21T17:41:56.711Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/softspotfront/uploads/-Ku_X1F9MIWJ3i0cwFOz?fileCount=78&message=  
+ Thu Sep 21 2017 11:41:56 GMT-0600 (MDT)
+[debug] [2017-09-21T17:43:32.954Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-21T17:43:32.954Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[error] 
+[error] Error: File upload failed: Deploy failed.
+[debug] [2017-09-21T17:44:28.259Z] Error Context: {
+  "duration": 125467,
+  "fileCount": 78,
+  "ip": "128.177.113.102",
+  "start": 1506015742781,
+  "status": "failed",
+  "statusMessage": "Deploy failed.",
+  "uid": "108455136377339622347",
+  "uploadedCount": 78,
+  "user": {
+    "email": "softspotg59@gmail.com",
+    "gaiaId": "108455136377339622347",
+    "image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg"
+  }
+}
+[debug] [2017-09-21T17:44:57.646Z] ----------------------------------------------------------------------
+[debug] [2017-09-21T17:44:57.648Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-09-21T17:44:57.648Z] CLI Version:   3.12.0
+[debug] [2017-09-21T17:44:57.648Z] Platform:      darwin
+[debug] [2017-09-21T17:44:57.648Z] Node Version:  v8.4.0
+[debug] [2017-09-21T17:44:57.649Z] Time:          Thu Sep 21 2017 11:44:57 GMT-0600 (MDT)
+[debug] [2017-09-21T17:44:57.649Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-09-21T17:44:57.659Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-21T17:44:57.659Z] > authorizing via signed-in user
+[debug] [2017-09-21T17:44:57.661Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/softspotfront  
+ Thu Sep 21 2017 11:44:57 GMT-0600 (MDT)
+[debug] [2017-09-21T17:44:57.957Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-21T17:44:57.957Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/softspotfront/tokens  
+ Thu Sep 21 2017 11:44:57 GMT-0600 (MDT)
+[debug] [2017-09-21T17:44:58.455Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'softspotfront'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing SoftSpot_front directory for upload...
+[debug] [2017-09-21T17:44:59.172Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/softspotfront/uploads/-Ku_XinVd_UQIvnNXGRV?fileCount=78&message=  
+ Thu Sep 21 2017 11:44:59 GMT-0600 (MDT)
+[debug] [2017-09-21T17:45:18.117Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-21T17:45:18.117Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[error] 
+[error] Error: File upload failed: Deploy failed.
+[debug] [2017-09-21T17:47:23.356Z] Error Context: {
+  "duration": 137799,
+  "fileCount": 78,
+  "ip": "128.177.113.102",
+  "start": 1506015905419,
+  "status": "failed",
+  "statusMessage": "Deploy failed.",
+  "uid": "108455136377339622347",
+  "uploadedCount": 78,
+  "user": {
+    "email": "softspotg59@gmail.com",
+    "gaiaId": "108455136377339622347",
+    "image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg"
+  }
+}
