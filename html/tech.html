@@ -25,25 +25,22 @@
       <div class="nav-left">
         <p id="search-box" class="control has-addons">
 
-          <select name="role" class="pincode">
+          <select name="tech" class="pincode">
             <option value="blank" disabled selected>Select a Tech</option>
-          </select>
-
-
+          </select>&nbsp;&nbsp;
 
             <i class="fa fa-desktop button"></i>
-
-        </p>
-        <p id="user-search" class="control has-addons">
-          <input class="input" type="text" placeholder="Search for User">
-
+&nbsp;&nbsp;&nbsp;&nbsp;
+            <select name="user" class="userselect">
+              <option value="blank" disabled selected>Find a top user</option>
+            </select>&nbsp;&nbsp;
             <i class="fa fa-users"></i>
 
         </p>
       </div>
 
       <div class="nav-center">
-        <a class="nav-item" href="./index.html">
+        <a class="nav-item" href="./html/index.html">
           <img src="../img/softspot-logo.png" alt="logo">
         </a>
       </div>
@@ -64,7 +61,6 @@
       </div>
     </div>
   </nav>
-
   <section class="section main">
     <div class="tile is-ancestor">
       <div class="tile is-vertical is-8">
@@ -74,7 +70,7 @@
             <article class="tile is-child notification is-primary">
               <p id="tech-name" class="title"></p>
               <figure class="image is-4by3">
-                <img src="https://logo.clearbit.com/atom.io">
+                <img id="tech-img" src="">
               </figure>
             </article>
           </div>
@@ -90,19 +86,21 @@
             </article>
             <article class="tile is-child notification is-primary">
               <p class="title">Avg. Rating</p>
-              <p class="subtitle">...</p>
+              <p class="subtitle" id="avg-rating"></p>
             </article>
-            <article class="tile is-child notification is-primary">
-              <p class="title">Add Review</p>
+            <article class="tile is-child notification is-primary" id="link-to-review">
+              <a href="addreview.html">
+                <p class="title">Add Review</p>
+              </a>
             </article>
           </div>
         </div>
         <div class="tile is-parent">
           <article class="tile is-child notification is-info">
             <p class="title">Related Technologies</p>
-            <p class="subtitle" id="related-tech"></p>
-            <div class="content">
-              <!-- Content -->
+            <p class="subtitle"></p>
+            <div class="content"  id="related-tech">
+
             </div>
           </article>
         </div>
@@ -112,17 +110,6 @@
           <div class="content">
             <p class="title">Reviews</p>
             <div class="content" id="reviews">
-              <!-- Content -->
-              <div class="card-content">
-              </div>
-
-              <div><h1></h1>
-              </div>
-
-
-
-              <div><h1></h1>
-              </div>
 
             </div>
           </div>
@@ -148,4 +135,6 @@
 <script type="text/javascript" src="../js/tech.js">
 
 </script>
+<script type="text/javascript" src="../js/techdropdown.js"></script>
+<script type="text/javascript" src="../js/userdropdown.js"></script>
 </html>

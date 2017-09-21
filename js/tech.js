@@ -1,41 +1,67 @@
 $('document').ready( ()=>{
-    'use strict';
-//code here
-let techURL = 'https://softspotdatabase.herokuapp.com/tech';
+    'use strict'
 
-$.get(techURL)
-.then(addTechProfile)
+var techURL = "https://softspotdatabase.herokuapp.com/tech"
+var reviewsURL = "https://softspotdatabase.herokuapp.com/reviews/"
 
-let reviewsURL = 'https://softspotdatabase.herokuapp.com/reviews';
-
-$.get(reviewsURL)
-.then(addReview)
-
-$.get(techURL)
-.then(addRelatedTech)
-
-});
-
-function addTechProfile(data) {
-  $('#tech-name').append(data[0].name);
-  if (data[0].category === 'TE') {
-    $('#category-name').append('Text Editor');
-  }
-  $('#description').append(data[0].description);
+function getIDfromURL () {
+  var id = location.search
+  id = id.split('=')
+  id = id[1]
+  return id
 }
 
-function addReview(data) {
-  for (var i=0; i<data.length; i++) {
-    if (data[i]['tech_name']  === 'Atom') {
-      $('#reviews').append(data[i].body);
-    }
+$.get(reviewsURL + getIDfromURL(), function (data) {
+  var rating = 0
+  for (var i = 0; i < data.length; i++) {
+    rating += data[i]['rating']
   }
-}
+  rating = (rating / data.length).toFixed(2)
+  $("#avg-rating").append(rating)
+  for (var i = 0; i < data.length; i++) {
+    $("#reviews").append(
+      `
+        <div class="techpage-review">
+          <h1>${data[i].title}</h1>
+          <p>${data[i].body}</p>
+          <span>Rating: ${data[i].rating}</span>
+        </div>
+      `
+    )
+  }
 
-function addRelatedTech(data) {
-  for (var i=0; i<data.length; i++) {
-    if (data[i]['category']  === 'TE') {
-      $('#related-tech').append(data[i].name);
-    }
-  }
-}
+}).then(
+  $.get(techURL + '/byId?id=' + getIDfromURL(), function (data2) {
+    $("#category-name").append(data2[0]['category'])
+    $("#description").append(data2[0]['description'])
+    $("#tech-img").attr("src", "https://logo.clearbit.com/" + data2[0]['url'])
+  }).then(
+    $.get(techURL, function (data3) {
+      console.log(data3)
+      var arr = []
+      for (var i = 0; i < data3.length; i++) {
+        if (data3[i]['category'] === data3[getIDfromURL() - 1]['category']) {
+          if (data3[i]['name'] !== data3[getIDfromURL() - 1]['name']) {
+            arr.push(data3[i])
+          }
+        }
+       }
+      for (var i = 0; i < arr.length; i++) {
+        $("#related-tech").append(
+          `
+            <div class="related">
+              <a href="tech.html?id=${arr[i].id}">${arr[i].name}</a>
+              <img src="https://logo.clearbit.com/${arr[i].url}">
+            </div>
+          `
+        )
+      }
+
+    })
+  )
+)
+
+
+
+
+})
