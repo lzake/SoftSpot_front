@@ -14,23 +14,20 @@
 </head>
 
 <body>
-
   <nav class="nav has-shadow">
     <div class="container">
-      <div class="nav-left">
-        <p id="search-box" class="control has-addons">
+      <div class="nav-left" style="display: flex;padding-top:10px">
+        <p id="search-box" class="control has-addons"  style="padding-bottom:20px;padding-left:20px;padding-right:20px;">
 
-          <select name="role" class="pincode">
+          <select name="tech" class="pincode">
             <option value="blank" disabled selected>Select a Tech</option>
-          </select>
+          </select>&nbsp;&nbsp;
 
-
-
-            <i class="fa fa-desktop button"></i>
-
-        </p>
-        <p id="user-search" class="control has-addons">
-          <input class="input" type="text" placeholder="Search for User">
+            <i class="fa fa-desktop"></i>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+            <select name="user" class="userselect">
+              <option value="blank" disabled selected>Find a top user</option>
+            </select>&nbsp;&nbsp;
 
             <i class="fa fa-users"></i>
 
@@ -64,9 +61,9 @@
 
         <div class="section main">
             <!-- <section id="signupForm" class="modal is-active"> -->
-            <div class="modal is-active">
-                <div class="modal-background"></div>
-                <div class="modal-card is-active">
+            <!-- <div class="modal is-active"> -->
+                <!-- <div class="modal-background"></div> -->
+                <!-- <div class="modal-card is-active"> -->
                     <section class="modal-card-body">
                         <section class="hero is-fullheight is-dark is-bold">
                             <form id="addTechReviewForm" role="search" method="post" action="./tech.html">
@@ -83,22 +80,18 @@
                                                     <label class="label">Category</label>
                                                     <div class="select">
                                                         <select id="techCatSelect">
-                                                    <option >Select<option>
+                                                    <option value="blank" disabled selected>Select</option>
                                                     <option data-category="TE">Text Editor</option>
                                                     <option data-category="Software">Software</option>
                                                     <option data-category="Language">Language</option>
                                                     <option data-category="Library">Library</option>
-
                                                     <option data-category="Markup Language">Markup Language</option>
-                                                </select>
-                                                    </div>
+                                                    </select>
+                                                  </div><br>
                                                     <label class="label">Technology</label>
-                                                    <div class="select">
-                                                        <select id="techTechSelect">
-                                                    <option>Select<option>
-                                                    <!-- options created dynamically via js  -->
-                                                </select>
-                                                    </div>
+                                                    <p class="control">
+                                                        <input id="techAddTitle" class="input" type="text" placeholder="Good software here..">
+                                                    </p>
                                                     <label for="techAddTitle" class="label">Title</label>
                                                     <p class="control">
                                                         <input id="techAddTitle" class="input" type="text" placeholder="CSS is Awesome">
@@ -134,11 +127,11 @@
                                 </div>
                                 <!-- </fieldset> -->
                             </form>
-                </div>
+                <!-- </div> -->
                 </section>
                 </section>
 
-            </div>
+            <!-- </div> -->
         </div>
         </div>
     </main>
@@ -156,8 +149,9 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/addreview.js">
-    </script>
+    <script src="../js/addreview.js"></script>
+    <script src="../js/techdropdown.js"></script>
+    <script src="../js/userdropdown.js"></script>
 
 </body>
 
