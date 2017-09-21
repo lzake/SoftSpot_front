@@ -8,16 +8,16 @@ To be used with [SoftSpot_back][https://github.com/wroth08/SoftSpot_back]
 
 ## Screenshots
 
-#### Landing Page
+### Landing Page
 ![landingpage](https://github.com/wroth08/SoftSpot_front/blob/master/img/landingpage.jpg)
 
-#### Home Page
+### Home Page
 ![homepage](https://github.com/wroth08/SoftSpot_front/blob/master/img/homepage.jpg)
 
-#### User Page
+### User Page
 ![userpage](https://github.com/wroth08/SoftSpot_front/blob/master/img/userpage.jpg)
 
-#### Tech Page
+### Tech Page
 ![techpage](https://github.com/wroth08/SoftSpot_front/blob/master/img/techpage.jpg)
 
 ## Built With
