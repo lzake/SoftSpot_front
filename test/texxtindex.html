@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Galvanize Personnel</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Galvanize Personnel</h1>
+    <form>
+        <form class="form" action="./techdropdown.js" method="get">
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" value="" id="firstname">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" value="" id="lastname">
+
+            <label for="name"></label>
+            <select name="role" class="pincode">
+              <option value="blank" disabled selected>Select a role</option>
+            </select>
+            <img src="http://via.placeholder.com/275x275" alt="placeholder" class="role-preview">
+            <input type="submit" value="Save" class="save">
+            <p class="save-status"></p>
+        </form>
+    </form>
+    <script src="./techdropdown.js" charset="utf-8"></script>
+</body>
+
+</html>

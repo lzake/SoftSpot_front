@@ -72,3 +72,11 @@ p.title.is-bold {
   float:right;
   color:#bbb;
 }
+#search-box {
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+#user-search {
+  padding-top: 10px;
+}

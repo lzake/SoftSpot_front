@@ -199,3 +199,11 @@ ul.card-stats-list {
 .trending .trend-hashtag {
   padding-bottom: 8px;
 }
+#search-box {
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+#user-search {
+  padding-top: 10px;
+}

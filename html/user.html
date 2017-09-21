@@ -17,16 +17,21 @@
     <div class="container">
       <div class="nav-left">
         <p id="search-box" class="control has-addons">
-          <input class="input" type="text" placeholder="Search for Tech">
-          <button class="button">
-            <i class="fa fa-desktop"></i>
-          </button>
+
+          <select name="role" class="pincode">
+            <option value="blank" disabled selected>Select a Tech</option>
+          </select>
+
+
+
+            <i class="fa fa-desktop button"></i>
+
         </p>
         <p id="user-search" class="control has-addons">
           <input class="input" type="text" placeholder="Search for User">
-          <button class="button">
+
             <i class="fa fa-users"></i>
-          </button>
+
         </p>
       </div>
 
@@ -38,15 +43,16 @@
 
       <span class="nav-toggle">
         <span></span>
-      <span></span>
-      <span></span>
+        <span></span>
+        <span></span>
       </span>
 
       <div class="nav-right nav-menu">
         <span class="nav-item">
-          <a class="auth0-login button">
-            <span>Login / Sign up</span>
-        </a>
+          <a id="login-button" class="auth0-login button">
+            <span>Login / Sign up </span>
+          </a>
+          <p id="welcome-text">Hello, </p>
         </span>
       </div>
     </div>

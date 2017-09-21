@@ -23,27 +23,43 @@
   <nav class="nav has-shadow">
     <div class="container">
       <div class="nav-left">
-        <a class="nav-item is-tab is-active" ><i class="fa fa-search"></i> &nbsp; Search</a>
-        <a class="nav-item is-tab" href="./html/tech.html"><i class="fa fa-desktop"></i> &nbsp; Technology </a>
+        <p id="search-box" class="control has-addons">
+
+          <select name="role" class="pincode">
+            <option value="blank" disabled selected>Select a Tech</option>
+          </select>
+
+
+
+            <i class="fa fa-desktop button"></i>
+
+        </p>
+        <p id="user-search" class="control has-addons">
+          <input class="input" type="text" placeholder="Search for User">
+
+            <i class="fa fa-users"></i>
+
+        </p>
       </div>
 
       <div class="nav-center">
-        <a class="nav-item" href="./html/index.html">
+        <a class="nav-item" href="./index.html">
           <img src="../img/softspot-logo.png" alt="logo">
         </a>
       </div>
 
       <span class="nav-toggle">
         <span></span>
-      <span></span>
-      <span></span>
+        <span></span>
+        <span></span>
       </span>
 
       <div class="nav-right nav-menu">
         <span class="nav-item">
-          <a class="auth0-login button">
-            <span>Login / Sign up</span>
-        </a>
+          <a id="login-button" class="auth0-login button">
+            <span>Login / Sign up </span>
+          </a>
+          <p id="welcome-text">Hello, </p>
         </span>
       </div>
     </div>
