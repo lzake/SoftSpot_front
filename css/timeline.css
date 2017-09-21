@@ -270,3 +270,13 @@ ul.card-stats-list {
 .content a:not(.button):visited {
   color: white;
 }
+
+#search-box {
+  padding-top: 10px;
+  padding-right: 10px;
+}
+
+#user-search {
+  padding-top: 10px;
+}
+

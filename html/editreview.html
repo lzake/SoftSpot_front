@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>SoftSpot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,54 +14,51 @@
 </head>
 
 <body>
+  <nav class="nav has-shadow">
+    <div class="container">
+      <div class="nav-left">
+        <p id="search-box" class="control has-addons">
 
-    <section class="hero is-primary is-large header-image">
-        <div class="hero-head">
-            <header class="nav">
-                <nav class="navbar" role="navigation" aria-label="main navigation">
-                    <div class="navbar-brand">
-                        <!-- navbar items, navbar burger... -->
-                        <a class="nav-item" href="./html/index.html">
-                           <img src="../html/img/softspotlogo.png" alt="Logo">
-                           </a>
-                        <div class="navbar-menu">
-                            <div class="navbar-end">
+          <select name="role" class="pincode">
+            <option value="blank" disabled selected>Select a Tech</option>
+          </select>
 
-                                <span><a id="" href="./html/tech.html" class="navbar-item">Tech</a></span>
-                                <span><a href="./html/user.html" class="navbar-link">User</a></span>
-                                <span><a href="#" class="navbar-item">Log In</a></span>
-                                <span><a href="#" class="navbar-item">Sign Up</a></span>
-                                </span>
-                                <div class="navbar-end">
-                                    <!-- navbar items -->
-                                    <div class="navbar-item field">
-                                        <!-- <label class="label">Name</label> -->
-                                        <div class="control">
-                                            <input class="input" type="text" placeholder="Search">
-                                        </div>
-                                    </div>
-                                    <a id="" href="./html/tech.html" class="navbar-item">Tech</a>
 
-                                    <div class="navbar-item has-dropdown is-hoverable " aria-label="dropdown navigation">
-                                        <a class="navbar-link">User</a>
-                                        <div class="navbar-dropdown">
-                                            <a class="navbar-item">Log In</a>
-                                            <hr class="navbar-divider">
-                                            <a class="navbar-item">Sign Up</a>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-        </div>
+            <i class="fa fa-desktop button"></i>
 
-    </section>
+        </p>
+        <p id="user-search" class="control has-addons">
+          <input class="input" type="text" placeholder="Search for User">
+
+            <i class="fa fa-users"></i>
+
+        </p>
+      </div>
+
+      <div class="nav-center">
+        <a class="nav-item" href="./index.html">
+          <img src="../img/softspot-logo.png" alt="logo">
+        </a>
+      </div>
+
+      <span class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+
+      <div class="nav-right nav-menu">
+        <span class="nav-item">
+          <a id="login-button" class="auth0-login button">
+            <span>Login / Sign up </span>
+          </a>
+          <p id="welcome-text">Hello, </p>
+        </span>
+      </div>
+    </div>
+  </nav>
     <main role="main">
-        <h1> TO BE EDITED </h1>
         <div class="section main">
             <!-- <section id="signupForm" class="modal is-active"> -->
             <div class="modal is-active">

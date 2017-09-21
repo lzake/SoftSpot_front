@@ -20,17 +20,27 @@
   </style>
 </head>
 <body>
-
-
   <nav class="nav has-shadow">
     <div class="container">
       <div class="nav-left">
-        <a class="nav-item is-tab is-active" ><i class="fa fa-search"></i> &nbsp; Search</a>
-        <a class="nav-item is-tab" href="./html/tech.html"><i class="fa fa-desktop"></i> &nbsp; Technology </a>
+        <p id="search-box" class="control has-addons">
+
+          <select name="tech" class="pincode">
+            <option value="blank" disabled selected>Select a Tech</option>
+          </select>&nbsp;&nbsp;
+
+            <i class="fa fa-desktop button"></i>
+&nbsp;&nbsp;&nbsp;&nbsp;
+            <select name="user" class="userselect">
+              <option value="blank" disabled selected>Find a top user</option>
+            </select>&nbsp;&nbsp;
+            <i class="fa fa-users"></i>
+
+        </p>
       </div>
 
       <div class="nav-center">
-        <a class="nav-item" href="./index.html">
+        <a class="nav-item" href="./html/index.html">
           <img src="../img/softspot-logo.png" alt="logo">
         </a>
       </div>
@@ -147,6 +157,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
     <script src="../js/addreview.js"></script>
+    <script src="../js/techdropdown.js"></script>
+    <script src="../js/userdropdown.js"></script>
 
 </body>
 </html>

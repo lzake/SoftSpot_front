@@ -85,12 +85,12 @@ p.title.is-bold {
     color: #bbb;
 }
 
+#search-box {
+  padding-top: 10px;
+  padding-right: 10px;
+}
 
-/*@media (min-width: 42rem) {
-    #section_UserReview-Container {
-        overflow-x: scroll;
-    }
-    .review {
-        width: 30%;
-    }
-}*/
+#user-search {
+  padding-top: 10px;
+}
+
