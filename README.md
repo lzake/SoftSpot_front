@@ -6,6 +6,20 @@ A decoupled full-stack CRUD App that stores reviews about technologies and softw
 
 To be used with [SoftSpot_back][https://github.com/wroth08/SoftSpot_back]
 
+## Screenshots
+
+#### Landing Page
+![landingpage](https://github.com/wroth08/SoftSpot_front/blob/master/img/landingpage.jpg)
+
+#### Home Page
+![homepage](https://github.com/wroth08/SoftSpot_front/blob/master/img/homepage.jpg)
+
+#### User Page
+![userpage](https://github.com/wroth08/SoftSpot_front/blob/master/img/userpage.jpg)
+
+#### Tech Page
+![techpage](https://github.com/wroth08/SoftSpot_front/blob/master/img/techpage.jpg)
+
 ## Built With
 
 * [Bulma](http://bulma.io) - The CSS framework used
