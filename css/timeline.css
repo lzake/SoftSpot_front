@@ -270,6 +270,7 @@ ul.card-stats-list {
 .content a:not(.button):visited {
   color: white;
 }
+
 #search-box {
   padding-top: 10px;
   padding-right: 10px;
@@ -278,3 +279,4 @@ ul.card-stats-list {
 #user-search {
   padding-top: 10px;
 }
+
