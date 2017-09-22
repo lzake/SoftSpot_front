@@ -69,16 +69,16 @@ $( 'document' ).ready( () => {
         } );
     }
     // add options to tech select
-    function createTechOptions( techChosen ) {
-        $techTechSelect.append( '<option >Select<option>' )
-        let techChoicesArray = techSortedByCategories[ techChosen ];
-        techChoicesArray.forEach( ( tech ) => {
-            let techName = tech.name;
-            let techId = tech.id;
-            let optionLi = `<option data-techId="${techId}">${techName}<option>`;
-            $techTechSelect.append( optionLi );
-        } );
-    }
+    // function createTechOptions( techChosen ) {
+    //     $techTechSelect.append( '<option >Select<option>' )
+    //     let techChoicesArray = techSortedByCategories[ techChosen ];
+    //     techChoicesArray.forEach( ( tech ) => {
+    //         let techName = tech.name;
+    //         let techId = tech.id;
+    //         let optionLi = `<option data-techId="${techId}">${techName}<option>`;
+    //         $techTechSelect.append( optionLi );
+    //     } );
+    // }
 
 
     // EVENT/CLICK HANDLERS **********************************************************************************************************************************************************************
@@ -87,15 +87,14 @@ $( 'document' ).ready( () => {
         let techSelected = $( 'select option:selected' ).attr( 'data-category' );
         console.log( techSelected );
         $techTechSelect.empty();
-        createTechOptions( techSelected );
+        // createTechOptions( techSelected );
     } );
 
     //BUG need to user AuthO for user id
     //BUG need a way to get tech id or change to tech_name as PK
     $addTechReviewForm.submit( ( event ) => {
+      event.preventDefault()
         let username_id;
-
-
         let reviewData = {
             title: $techAddTitle.val(),
             body: $techAddText.val(),
@@ -103,9 +102,10 @@ $( 'document' ).ready( () => {
             username_id: 1,
             tech_id: 1,
         }
+
+        console.log(reviewData);
         //update tech_id var so tech.html page can be dynamically updated with this tech reviewed upon redirect
         tech_id = reviewData.tech_id;
-
         JSON.stringify( reviewData );
         sendTechReview( reviewData );
     } );
@@ -129,15 +129,12 @@ $( 'document' ).ready( () => {
     function sendTechReview( dataR ) {
         $.ajax( {
             type: "POST",
-            url: `${dbUrl}`,
+            url: `${dbUrl}/reviews`,
             data: dataR,
             async: true,
             crossDomain: true,
             success: function ( response ) {
-
-                //BUG renderTechPageData not created yet
-                //send user back to tech page of tech reviewed
-                renderTechPageData( tech_id );
+              window.location.replace("https://softspotfront.firebaseapp.com/html")
             }
         } );
     }
