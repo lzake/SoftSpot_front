@@ -1,14 +1,12 @@
-$( 'document' ).ready( () => {
+$('document').ready(() => {
     'use strict';
-
     //GLOBAL VARIABLES **********************************************************************************************************************************************************************
-
     // jQuery Variables
-    let $profileContainer = $( '#userProfile' );
-    let $reviewContainer = $( '#section_UserReview-Container' );
-    let $proSkillContainer = $( '#proSkills' );
+    let $profileContainer = $('#userProfile');
+    let $reviewContainer = $('#section_UserReview-Container');
+    let $proSkillContainer = $('#proSkills');
 
-    let $skillId = $( '#skillId' );
+    let $skillId = $('#skillId');
 
     // JAVASCRIPT vars
     const userURL = 'https://softspotdatabase.herokuapp.com/users';
@@ -16,34 +14,24 @@ $( 'document' ).ready( () => {
     let techDataArray;
     var allReviews;
     var allSkills;
-
-
-
-
-
-
     //FUNCTIONS **********************************************************************************************************************************************************************
-
-
-
     // add user Info to Profile Section
-    function addUserInfo( userId ) {
+    function addUserInfo(userId) {
         ///BUG CANNOT GET USER PROFILE INFO
-        $.get( `${userURL}/byId?id=${userId}`, function ( user ) {
+        $.get(`${userURL}/byId?id=${userId}`, function (user) {
             let thisUser = user;
 
-        } ).then( ( thisUser ) => {
+        }).then((thisUser) => {
             //get user skill endorsement...need route for this
-            thisUser.forEach( ( user ) => {
+            thisUser.forEach((user) => {
 
                 // BUG NEED TO ADD ROUTE TO DB TO GET endorsements
-                let endorsements = Math.floor( Math.random() * 50 + 1 );
-                // set below vars to be values from thisUser Object
-                let userImage = user.img;
-                let userName = user.name;
-                let userBio = user.bio;
-
-                let profile = `<div class="tile is-parent is-info">
+                let endorsements = Math.floor(Math.random() * 50 + 1),
+                    // set below vars to be values from thisUser Object
+                    userImage = user.img,
+                    userName = user.name,
+                    userBio = user.bio,
+                    profile = `<div class="tile is-parent is-info">
                 <article class="tile is-child is-info box">
                     <div class="columns">
                         <div class="column is-2">
@@ -63,37 +51,32 @@ $( 'document' ).ready( () => {
                 </div>
             </article>
         </div>`;
-
-                $profileContainer.append( profile );
-            } );
-        } );
+                $profileContainer.append(profile);
+            });
+        });
     }
 
     // add user Reviews  to Review Section
-    function addUserReviews( userId ) {
-
-        $.get( `${userURL}/${userId}/reviews`, function ( reviews ) {
-
+    addUserReviews = userId => {
+        $.get(`${userURL}/${userId}/reviews`, function (reviews) {
             allReviews = reviews;
-        } ).then( allReviews => {
-
-            allReviews.forEach( ( review ) => {
+        }).then(allReviews => {
+            allReviews.forEach((review) => {
                 let techN;
                 /// match each review.tech_id to a techDataArray id and use its name
-                techDataArray.forEach( ( tech ) => {
+                techDataArray.forEach((tech) => {
                     let techId = tech.id;
                     let techName = tech.name;
-                    if ( review.tech_id === techId ) {
+                    if (review.tech_id === techId) {
                         techN = techName;
                     }
-                } );
-
+                });
                 // let tech = review.tech_id;
-                let title = review.title;
-                let body = review.body;
-                let rating = review.rating;
-                let reviewEach =
-                `<div class="tile is-parent is-info review">
+                let title = review.title,
+                    body = review.body,
+                    rating = review.rating,
+                    reviewEach =
+                    `<div class="tile is-parent is-info review">
                     <article class="tile is-child is-info box">
                         <p class="title">${techN}</p>
                         <p class="subtitle">${title}</p>
@@ -103,27 +86,21 @@ $( 'document' ).ready( () => {
                         </div>
                     </article>
                 </div>`;
-
-                $reviewContainer.append( reviewEach );
-            } );
-        } );
+                $reviewContainer.append(reviewEach);
+            });
+        });
     }
-
-
     // add Pro Skills to Skills Section
-
-    function addUserSkills( userId ) {
-        $.get( `${userURL}/${userId}/skills`, function ( skills ) {
+    addUserSkills = userId => {
+        $.get(`${userURL}/${userId}/skills`, function (skills) {
             allSkills = skills;
-        } ).then( allSkills => {
-
-            allSkills.forEach( ( skill ) => {
-                let name = skill.name;
-                let id = skill.id;
-
-                //revise this section to match html
-                let skillEach =
-                `<div class="tile is-parent is-info">
+        }).then(allSkills => {
+            allSkills.forEach(skill => {
+                let name = skill.name,
+                    id = skill.id,
+                    //revise this section to match html
+                    skillEach =
+                    `<div class="tile is-parent is-info">
                     <article class="tile is-child is-info box"><div class="control">
                         <div class="tags has-addons">
                             <span id="skillId" class="tag is-info" data-skillId="${id}">${name}</span>
@@ -131,26 +108,19 @@ $( 'document' ).ready( () => {
                         </div>
                     </article>
                 </div>`;
-
-                $proSkillContainer.append( skillEach );
-            } );
-        } );
+                $proSkillContainer.append(skillEach);
+            });
+        });
 
     }
-
     // EVENT/CLICK HANDLERS **********************************************************************************************************************************************************************
-
-
     //AJAX CALLS **********************************************************************************************************************************************************************
-
     // get all tech data objects/info to use
-    $.get( technologyURL, ( techData ) => {
+    $.get(technologyURL, techData => {
         techDataArray = techData;
-    } ).then( () => addUserReviews( currentUserId ) );
+    }).then(() => addUserReviews(currentUserId));
 
     //Function CALLS *********************************************************************************************************************************************************************
-
-    addUserInfo( currentUserId);
-    addUserSkills( currentUserId );
-
-} );
+    addUserInfo(currentUserId);
+    addUserSkills(currentUserId);
+});

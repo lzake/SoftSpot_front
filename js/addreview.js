@@ -1,4 +1,4 @@
-$( 'document' ).ready( () => {
+$('document').ready(() => {
     'use strict';
 
     //GLOBAL VARIABLES **********************************************************************************************************************************************************************
@@ -23,13 +23,13 @@ $( 'document' ).ready( () => {
 
 
     // jQUERY VARIABLES
-    let $addTechReviewForm = $( '#addTechReviewForm' );
-    let $techCatSelect = $( '#techCatSelect' );
-    let $techTechSelect = $( '#techTechSelect' );
-    let $techAddTitle = $( '#techAddTitle' );
+    let $addTechReviewForm = $('#addTechReviewForm');
+    let $techCatSelect = $('#techCatSelect');
+    let $techTechSelect = $('#techTechSelect');
+    let $techAddTitle = $('#techAddTitle');
     //BUG BELOW VAR NOT WORKING....WITH addTechREviewForm
-    let $techAddRating = $( "input[type='radio']:checked" );
-    let $techAddText = $( '#techAddText' );
+    let $techAddRating = $("input[type='radio']:checked");
+    let $techAddText = $('#techAddText');
 
 
     //FUNCTIONS **********************************************************************************************************************************************************************
@@ -39,112 +39,87 @@ $( 'document' ).ready( () => {
     }
 
     //sort tech data into categories
-    function sortTechCategories( data ) {
+    function sortTechCategories(data) {
         //data is array of obj
         //key is index: value is tech obj
 
-        data.forEach( ( tech ) => {
+        data.forEach((tech) => {
 
             let category = tech.category;
 
-            switch ( category ) {
+            switch (category) {
                 case 'TE':
-                    techSortedByCategories[ 'TE' ].push( tech );
+                    techSortedByCategories['TE'].push(tech);
                     break;
                 case 'Software':
-                    techSortedByCategories[ 'Software' ].push( tech );
+                    techSortedByCategories['Software'].push(tech);
                     break;
                 case 'Language':
-                    techSortedByCategories[ 'Language' ].push( tech );
+                    techSortedByCategories['Language'].push(tech);
                     break;
                 case 'Markup Language':
-                    techSortedByCategories[ 'Markup Language' ].push( tech );
+                    techSortedByCategories['Markup Language'].push(tech);
                     break;
                 case 'Library':
-                    techSortedByCategories[ 'Library' ].push( tech );
+                    techSortedByCategories['Library'].push(tech);
                     break;
                 default:
-                    console.log( `no category match for ${tech.name}` );
+                    console.log(`no category match for ${tech.name}`);
             }
-        } );
+        });
     }
-    // add options to tech select
-    // function createTechOptions( techChosen ) {
-    //     $techTechSelect.append( '<option >Select<option>' )
-    //     let techChoicesArray = techSortedByCategories[ techChosen ];
-    //     techChoicesArray.forEach( ( tech ) => {
-    //         let techName = tech.name;
-    //         let techId = tech.id;
-    //         let optionLi = `<option data-techId="${techId}">${techName}<option>`;
-    //         $techTechSelect.append( optionLi );
-    //     } );
-    // }
-
 
     // EVENT/CLICK HANDLERS **********************************************************************************************************************************************************************
 
-    $techCatSelect.change( () => {
-        let techSelected = $( 'select option:selected' ).attr( 'data-category' );
-        console.log( techSelected );
+    $techCatSelect.change(() => {
+        let techSelected = $('select option:selected').attr('data-category');
+        console.log(techSelected);
         $techTechSelect.empty();
         // createTechOptions( techSelected );
-    } );
+    });
 
-    //BUG need to user AuthO for user id
-    //BUG need a way to get tech id or change to tech_name as PK
-    $addTechReviewForm.submit( ( event ) => {
-      event.preventDefault()
+    $addTechReviewForm.submit((event) => {
+        event.preventDefault()
         let username_id;
         let reviewData = {
             title: $techAddTitle.val(),
             body: $techAddText.val(),
-            rating: $( "input[type='radio']:checked" ).val(),
+            rating: $("input[type='radio']:checked").val(),
             username_id: 1,
             tech_id: 1,
         }
-
-        console.log(reviewData);
-        //update tech_id var so tech.html page can be dynamically updated with this tech reviewed upon redirect
         tech_id = reviewData.tech_id;
-        JSON.stringify( reviewData );
-        sendTechReview( reviewData );
-    } );
+        JSON.stringify(reviewData);
+        sendTechReview(reviewData);
+    });
 
     //AJAX CALLS **********************************************************************************************************************************************************************
 
     // get Tech List Option data
-    $.ajax( {
+    $.ajax({
         type: "GET",
         url: `${dbUrl}/tech`,
         data: daTa,
         async: true,
         crossDomain: true,
-        success: function ( response ) {
-            sortTechCategories( response );
+        success: function (response) {
+            sortTechCategories(response);
         }
-    } );
+    });
 
     // send Tech reviewData
 
-    function sendTechReview( dataR ) {
-        $.ajax( {
+    function sendTechReview(dataR) {
+        $.ajax({
             type: "POST",
             url: `${dbUrl}/reviews`,
             data: dataR,
             async: true,
             crossDomain: true,
-            success: function ( response ) {
-              window.location.replace("https://softspotfront.firebaseapp.com/html")
+            success: function (response) {
+                window.location.replace("https://softspotfront.firebaseapp.com/html")
             }
-        } );
+        });
     }
 
-    //FUNCTION CALLS **********************************************************************************************************************************************************************
-
-
-
-
-
-
-
-} );
+});
